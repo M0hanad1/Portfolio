@@ -88,7 +88,7 @@ header a:hover {
 header .logo {
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 3px;
     font-size: 20px;
 }
 
@@ -103,7 +103,7 @@ nav.words a::after {
     right: 0;
     height: 2px;
     background-position: right;
-    background: linear-gradient(to left, var(--header-color) 50%, var(--second-color) 50%) right;
+    background: linear-gradient(to left, transparent 50%, var(--second-color) 50%) right;
     background-size: 200%;
     transition: calc(var(--transition-time) + 0.2s);
 }
@@ -206,17 +206,18 @@ nav.burger-menu li:hover a {
 }
 
 .landing-button {
-    color: white;
+    color: var(--second-color);
     border: 1px solid var(--second-color);
     padding: 18px;
     border-radius: 5px;
-    background: linear-gradient(to left, var(--first-color) 50%, var(--second-color) 50%) right;
+    background: linear-gradient(to left, transparent 50%, var(--second-color) 50%) right;
     background-size: 200%;
-    transition: background-position calc(var(--transition-time) + 0.2s);
+    transition: background-position calc(var(--transition-time) + 0.2s), color calc(var(--transition-time) + 0.2s);
 }
 
 .landing-button:hover {
     background-position: left;
+    color: white;
 }
 
 @media (max-width: 400px), (max-height: 470px) {
