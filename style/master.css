@@ -1,0 +1,158 @@
+/* Global Rules Start */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+    --header-color: #171f24;
+    --burger-menu-color: #303f47;
+    --first-color: #1B262C;
+    --second-color: #0F4C75;
+    --third-color: #3282B8;
+    --fourth-color: #BBE1FA;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--first-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* Global Rules End */
+
+/* Header Start */
+header {
+    background-color: var(--header-color);
+    width: 100%;
+    padding: 20px 0;
+    position: fixed;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    color: white;
+    transition: color 0.3s, transform 0.3s;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: var(--third-color);
+}
+
+header .logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    font-size: 20px;
+}
+
+header nav.words a {
+    padding-left: 15px;
+}
+
+nav.burger-menu {
+    color: white;
+    position: relative;
+}
+
+nav.burger-menu .links {
+    visibility: hidden;
+    position: absolute;
+    list-style: none;
+    top: 150%;
+    background-color: var(--burger-menu-color);
+    right: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 3px;
+}
+
+nav.burger-menu:hover .links {
+    visibility: visible;
+}
+
+nav.burger-menu::before {
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid var(--burger-menu-color);
+    bottom: -20px;
+    right: 0;
+}
+
+nav.burger-menu:hover::before {
+    content: "";
+}
+
+nav.burger-menu li:not(:last-child) {
+    border-bottom: 1px solid var(--first-color);
+}
+
+nav.burger-menu a {
+    display: block;
+    width: 100%;
+    padding: 18px 90px 18px 10px;
+    width: 100%;
+    height: 100%;
+}
+
+nav.burger-menu li:hover a {
+    transform: translate(5px);
+    color: var(--third-color);
+}
+
+@media (min-width: 491px) {
+    nav.burger-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 490px) {
+    nav.words {
+        display: none;
+    }
+    nav.burger-menu {
+        display: block;
+    }
+}
+/* Header End */
