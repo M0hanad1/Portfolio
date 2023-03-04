@@ -8,9 +8,12 @@
     --second-color: #0F4C75;
     --third-color: #3282B8;
     --fourth-color: #BBE1FA;
+    --transition-time: 0.3s;
 }
 
-* {
+*,
+*::before,
+*::after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -21,7 +24,6 @@ html {
 }
 
 body {
-    background-color: var(--first-color);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -61,6 +63,8 @@ header {
     width: 100%;
     padding: 20px 0;
     position: fixed;
+    top: 0;
+    z-index: 99;
 }
 
 header .container {
@@ -71,8 +75,10 @@ header .container {
 
 header a {
     color: white;
-    transition: color 0.3s, transform 0.3s;
+    transition: color var(--transition-time), transform var(--transition-time);
     font-weight: bold;
+    display: inline-block;
+    position: relative;
 }
 
 header a:hover {
@@ -82,12 +88,29 @@ header a:hover {
 header .logo {
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 0.7px;
+    letter-spacing: 3px;
     font-size: 20px;
 }
 
-header nav.words a {
-    padding-left: 15px;
+nav.words a {
+    margin-left: 20px;
+}
+
+nav.words a::after {
+    content: "";
+    position: absolute;
+    top: 110%;
+    right: 0;
+    height: 2px;
+    background-position: right;
+    background: linear-gradient(to left, transparent 50%, var(--second-color) 50%) right;
+    background-size: 200%;
+    transition: calc(var(--transition-time) + 0.2s);
+}
+
+nav.words a:hover::after {
+    width: 100%;
+    background-position: left;
 }
 
 nav.burger-menu {
@@ -156,3 +179,50 @@ nav.burger-menu li:hover a {
     }
 }
 /* Header End */
+
+/* Landing Start */
+.landing {
+    height: 100vh;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: var(--first-color);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.landing-text p {
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.landing-text h2 {
+    margin: 20px;
+    letter-spacing: 0.3px;
+    color: var(--second-color);
+}
+
+.landing-button {
+    color: var(--second-color);
+    border: 1px solid var(--second-color);
+    padding: 18px;
+    border-radius: 5px;
+    background: linear-gradient(to left, transparent 50%, var(--second-color) 50%) right;
+    background-size: 200%;
+    transition: background-position calc(var(--transition-time) + 0.2s), color calc(var(--transition-time) + 0.2s);
+}
+
+.landing-button:hover {
+    background-position: left;
+    color: white;
+}
+
+@media (max-width: 400px), (max-height: 470px) {
+    .landing {
+        font-size: large;
+    }
+}
+/* Landing End */
