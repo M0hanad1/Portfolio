@@ -182,7 +182,7 @@ nav.burger-menu li:hover a {
 
 /* Landing Start */
 .landing {
-    height: 100vh;
+    min-height: 100vh;
     font-size: 28px;
     font-weight: bold;
     background-color: var(--first-color);
@@ -222,7 +222,7 @@ nav.burger-menu li:hover a {
 
 @media (max-width: 400px), (max-height: 470px) {
     .landing {
-        font-size: large;
+        font-size: 22px;
     }
 }
 /* Landing End */
