@@ -170,6 +170,7 @@ nav.words a::after {
     position: absolute;
     top: 110%;
     width: 100%;
+    visibility: hidden;
     right: 0;
     height: 2px;
     background-position: right;
@@ -177,11 +178,13 @@ nav.words a::after {
             transparent 50%,
             var(--theme-color) 50%) right;
     background-size: 200%;
-    transition: background-position var(--short-transition-time);
+    transition: background-position  var(--short-transition-time),
+        visibility var(--short-transition-time);
 }
 
 nav.words a:hover::after {
     background-position: left;
+    visibility: visible;
 }
 
 nav.burger-menu {
@@ -305,6 +308,13 @@ nav.burger-menu li:hover a {
     text-align: center;
 }
 
+.about .container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .about .important {
     font-size: 25px;
 }
@@ -312,19 +322,22 @@ nav.burger-menu li:hover a {
 .about p {
     margin: 0;
     font-size: 20px;
+    flex-shrink: 2;
 }
 
-.about p:not(:last-child) {
-    margin-bottom: 14px;
+@media (max-width: 539px) {
+    .about p {
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 492px) {
     .about p {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .about .important {
-        font-size: 23px;
+        font-size: 18px;
     }
 }
 /* About End */
