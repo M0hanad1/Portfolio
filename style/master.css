@@ -32,13 +32,16 @@
     }
 }
 
+* {
+    color: whitesmoke;
+}
+
 *,
 *::before,
 *::after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    color: white;
 }
 
 html {
@@ -64,9 +67,8 @@ a {
     text-align: center;
     margin: auto;
     width: fit-content;
-    margin-bottom: 23px;
     position: relative;
-    cursor: pointer;
+    cursor: default;
 }
 
 .title h2 {
@@ -100,10 +102,6 @@ a {
 }
 
 @media (max-width: 400px) {
-    .title {
-        margin-bottom: 20px;
-    }
-
     .title h2 {
         font-size: 60px;
     }
@@ -197,7 +195,7 @@ nav.words a::after {
             transparent 50%,
             var(--theme-color) 50%) right;
     background-size: 200%;
-    transition: background-position  var(--short-transition-time),
+    transition: background-position var(--short-transition-time),
         visibility var(--short-transition-time);
 }
 
@@ -208,6 +206,10 @@ nav.words a:hover::after {
 
 nav.burger-menu {
     position: relative;
+}
+
+nav.burger-menu i {
+    color: whitesmoke;
 }
 
 nav.burger-menu .links {
@@ -309,7 +311,7 @@ nav.burger-menu li:hover a {
 
 .landing-button:hover {
     background-position: left;
-    color: white;
+    color: whitesmoke;
 }
 
 @media (max-width: 400px),
@@ -327,35 +329,86 @@ nav.burger-menu li:hover a {
 }
 /* Landing End */
 
-/* About Start */
-.about {
+/* Services Start */
+.services {
     background-color: var(--second-color);
     padding: var(--main-padding);
-    text-align: center;
 }
 
-.about .container {
+.services .container {
+    margin-top: 50px;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 35px;
 }
 
-.about .important {
-    font-size: 25px;
+.serv {
+    width: 300px;
+    height: 250px;
+    border: 1px solid var(--theme-color);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    transition: background-color var(--long-transition-time);
 }
 
-.about p {
-    margin: 0;
-    font-size: 20px;
+.serv > * {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.serv-title {
+    transition: transform var(--long-transition-time);
+}
+
+.serv-title h3 {
+    color: var(--theme-color);
+    font-size: 30px;
+    margin: 12px 0 25px;
+    letter-spacing: 1px;
+}
+
+.serv p {
+    opacity: 0;
+    width: calc(100% - 15px);
+    transition: transform var(--long-transition-time),
+        opacity var(--short-transition-time);
+}
+
+.serv p .important {
+    color: var(--third-color);
+}
+
+.serv:hover {
+    background-color: var(--theme-color);
+}
+
+.serv:hover .serv-title {
+    transform: translate(50%, -75%);
+}
+
+.serv:hover .serv-title * {
+    color: var(--third-color);
+}
+
+.serv:hover p {
+    opacity: 1;
+    transform: translate(50%, 25%);
 }
 
 @media (max-width: 400px) {
-    .about p {
-        font-size: 18px;
+    .serv {
+        width: 250px;
     }
 
-    .about .important {
-        font-size: 23px;
+    .serv-title h3 {
+        font-size: 25px;
     }
 }
-/* About End */
+/* Services End */
