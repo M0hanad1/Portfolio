@@ -58,6 +58,10 @@ a {
     text-decoration: none;
 }
 
+section[id] {
+    scroll-margin-top: 63px;
+}
+
 .important {
     color: var(--theme-color);
     letter-spacing: 0.3px;
@@ -276,14 +280,13 @@ nav.burger-menu li:hover a {
 /* Landing Start */
 .landing {
     height: 100vh;
-    height: 100svh;
     font-size: 28px;
     background-color: var(--first-color);
     text-align: center;
 }
 
 .landing-content {
-    min-height: 100vh;
+    min-height: 100%;
     min-height: 100svh;
     padding-top: 63px;
     display: flex;
@@ -352,7 +355,6 @@ nav.burger-menu li:hover a {
     height: 250px;
     border: 1px solid var(--theme-color);
     border-radius: 8px;
-    padding: 15px;
     text-align: center;
     position: relative;
     transition: background-color var(--long-transition-time);
@@ -372,13 +374,14 @@ nav.burger-menu li:hover a {
 .serv-title h3 {
     color: var(--theme-color);
     font-size: 30px;
-    margin: 12px 0 25px;
+    margin: 12px 0 18px;
     letter-spacing: 1px;
 }
 
 .serv p {
     opacity: 0;
-    width: calc(100% - 15px);
+    padding: 0 15px;
+    width: 100%;
     transition: transform var(--long-transition-time),
         opacity var(--short-transition-time);
 }
