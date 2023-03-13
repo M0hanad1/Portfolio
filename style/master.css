@@ -1,7 +1,7 @@
 /* Global Rules Start */
 :root {
     --theme-color: #0f4c75;
-    --header-color: #171f24;
+    --landing-color: #171f24;
     --burger-menu-color: #303f47;
     --first-color: #1b262c;
     --second-color: #25323a;
@@ -152,11 +152,14 @@ section[id] {
 
 /* Header Start */
 header {
-    background-color: var(--header-color);
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     width: 100%;
     padding: 20px 0;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 99;
 }
 
@@ -282,8 +285,8 @@ nav.burger-menu li:hover a {
     height: 100vh;
     height: 100svh;
     font-size: 28px;
-    background-color: var(--first-color);
     text-align: center;
+    background-color: var(--landing-color);
 }
 
 .landing-content {
@@ -337,7 +340,7 @@ nav.burger-menu li:hover a {
 
 /* Services Start */
 .services {
-    background-color: var(--second-color);
+    background-color: var(--first-color);
     padding: var(--main-padding);
 }
 
