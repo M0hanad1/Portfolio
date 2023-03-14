@@ -49,7 +49,7 @@ html {
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     overflow: overlay;
 }
@@ -153,7 +153,7 @@ section[id] {
 /* Header Start */
 header {
     background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(7px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     width: 100%;
     padding: 20px 0;
@@ -192,7 +192,7 @@ nav.words a:not(:first-child) {
 nav.words a::after {
     content: "";
     position: absolute;
-    top: 110%;
+    top: 125%;
     width: 100%;
     visibility: hidden;
     right: 0;
@@ -361,7 +361,8 @@ nav.burger-menu li:hover a {
     border-radius: 8px;
     text-align: center;
     position: relative;
-    transition: background-color var(--long-transition-time);
+    transition: background-color var(--long-transition-time),
+        transform var(--short-transition-time);
 }
 
 .serv > * {
@@ -390,12 +391,10 @@ nav.burger-menu li:hover a {
         opacity var(--short-transition-time);
 }
 
-.serv p .important {
-    color: var(--third-color);
-}
-
 .serv:hover {
     background-color: var(--theme-color);
+    transform: scale(1.1);
+    box-shadow: 0 5px 8px 2px rgba(0, 0, 0, 0.1);
 }
 
 .serv:hover .serv-title {
