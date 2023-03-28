@@ -124,6 +124,72 @@ section[id] {
     }
 }
 
+.card {
+    position: relative;
+    transition: background-color var(--long-transition-time),
+        transform var(--short-transition-time);
+}
+
+.card>.card-title,
+.card>p:first-of-type {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.card-title {
+    transition: transform var(--long-transition-time);
+}
+
+.card-title h3 {
+    color: var(--theme-color);
+    font-size: 30px;
+    margin: 12px 0;
+    letter-spacing: 1px;
+}
+
+.card>p:first-of-type {
+    opacity: 0;
+    padding: 0 15px;
+    width: 100%;
+    transition: transform var(--long-transition-time),
+        opacity var(--short-transition-time);
+}
+
+.card:hover {
+    background-color: var(--theme-color);
+    transform: scale(1.1);
+    box-shadow: 0 5px 8px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover .card-title {
+    transform: translate(50%, -75%);
+}
+
+.card:hover .card-title * {
+    color: var(--third-color);
+}
+
+.card:hover i {
+    animation: bounce 0.8s linear alternate infinite;
+}
+
+.card:hover>p:first-of-type {
+    opacity: 1;
+    transform: translate(50%, 25%);
+}
+
+@media (max-width: 400px) {
+    .serv {
+        width: 250px;
+    }
+
+    .card-title h3 {
+        font-size: 25px;
+    }
+}
+
 .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -360,63 +426,75 @@ nav.burger-menu li:hover a {
     border: 1px solid var(--theme-color);
     border-radius: 8px;
     text-align: center;
-    position: relative;
-    transition: background-color var(--long-transition-time),
-        transform var(--short-transition-time);
 }
 
-.serv > * {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
+/* Services End */
+
+/* Skills Start */
+.skills {
+    background-color: var(--second-color);
+    padding: var(--main-padding);
 }
 
-.serv-title {
-    transition: transform var(--long-transition-time);
+.skills .container {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 35px;
 }
 
-.serv-title h3 {
-    color: var(--theme-color);
-    font-size: 30px;
-    margin: 12px 0 18px;
-    letter-spacing: 1px;
+.skill {
+    width: 330px;
+    height: 280px;
+    border: 1px solid var(--theme-color);
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
-.serv p {
-    opacity: 0;
-    padding: 0 15px;
-    width: 100%;
-    transition: transform var(--long-transition-time),
-        opacity var(--short-transition-time);
-}
-
-.serv:hover {
-    background-color: var(--theme-color);
-    transform: scale(1.1);
-    box-shadow: 0 5px 8px 2px rgba(0, 0, 0, 0.1);
-}
-
-.serv:hover .serv-title {
-    transform: translate(50%, -75%);
-}
-
-.serv:hover .serv-title * {
+.skill span {
     color: var(--third-color);
 }
 
-.serv:hover p {
-    opacity: 1;
-    transform: translate(50%, 25%);
+.skill i {
+    transition: calc(var(--long-transition-time) + 0.2s);
 }
 
-@media (max-width: 400px) {
-    .serv {
-        width: 250px;
+.exp {
+    font-size: large;
+    position: absolute;
+}
+
+p.years {
+    transform: translate(-100%);
+}
+
+p.level {
+    transform: translate(50%);
+}
+
+.skill:hover .exp {
+    color: var(--third-color);
+}
+
+.skill:hover i {
+    rotate: y 180deg;
+}
+/* Skills End */
+
+/* Animation Start */
+@keyframes bounce {
+    0% {
+        transform: translate(0, 4px);
     }
 
-    .serv-title h3 {
-        font-size: 25px;
+    100% {
+        transform: translate(0, -4px);
     }
 }
-/* Services End */
+/* Animation End */
