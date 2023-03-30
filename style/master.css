@@ -105,9 +105,9 @@ section[id] {
     opacity: 0.6;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .title h2 {
-        font-size: 60px;
+        font-size: 70px;
     }
 
     .title::before {
@@ -124,14 +124,20 @@ section[id] {
     }
 }
 
+@media (max-width: 400px) {
+    .title h2 {
+        font-size: 60px;
+    }
+}
+
 .card {
     position: relative;
     transition: background-color var(--long-transition-time),
         transform var(--short-transition-time);
 }
 
-.card>.card-title,
-.card>p:first-of-type {
+.card > .card-title,
+.card > p:first-of-type {
     position: absolute;
     top: 50%;
     right: 50%;
@@ -149,7 +155,7 @@ section[id] {
     letter-spacing: 1px;
 }
 
-.card>p:first-of-type {
+.card > p:first-of-type {
     opacity: 0;
     padding: 0 15px;
     width: 100%;
@@ -175,13 +181,13 @@ section[id] {
     animation: bounce 0.8s linear alternate infinite;
 }
 
-.card:hover>p:first-of-type {
+.card:hover > p:first-of-type {
     opacity: 1;
     transform: translate(50%, 25%);
 }
 
 @media (max-width: 400px) {
-    .serv {
+    .card {
         width: 250px;
     }
 
@@ -421,13 +427,12 @@ nav.burger-menu li:hover a {
 }
 
 .serv {
-    width: 300px;
+    width: 320px;
     height: 250px;
     border: 1px solid var(--theme-color);
     border-radius: 8px;
     text-align: center;
 }
-
 /* Services End */
 
 /* Skills Start */
@@ -447,7 +452,7 @@ nav.burger-menu li:hover a {
 }
 
 .skill {
-    width: 330px;
+    width: 320px;
     height: 280px;
     border: 1px solid var(--theme-color);
     border-radius: 8px;
@@ -462,7 +467,7 @@ nav.burger-menu li:hover a {
 }
 
 .skill i {
-    transition: calc(var(--long-transition-time) + 0.2s);
+    transition: calc(var(--long-transition-time) + 0.3s);
 }
 
 .exp {
@@ -487,6 +492,119 @@ p.level {
 }
 /* Skills End */
 
+/* Projects Start */
+.projects {
+    background-color: var(--first-color);
+    padding: var(--main-padding);
+}
+
+.projects .container {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+}
+
+.pro {
+    width: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 1px solid var(--theme-color);
+    gap: 22px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: background-color var(--long-transition-time),
+        transform var(--short-transition-time);
+}
+
+.pro .tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pro .tags * {
+    background-color: var(--theme-color);
+    padding: 5px;
+    font-size: small;
+    border-radius: 8px;
+    margin: 0;
+    transition: background-color var(--short-transition-time),
+    color var(--short-transition-time);
+}
+
+.pro:hover .tags * {
+    background-color: var(--third-color);
+}
+
+.tags *:hover {
+    background-color: var(--fourth-color) !important;
+    cursor: default;
+    color: var(--third-color);
+}
+
+.pro:hover {
+    background-color: var(--theme-color);
+    transform: scale(1.1);
+    box-shadow: 0 5px 8px 2px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.pro .important {
+    transition: color var(--short-transition-time);
+    width: fit-content;
+}
+
+.pro:hover .important {
+    color: var(--third-color);
+}
+
+.pro .important:hover, .pro .important:hover * {
+    color: var(--fourth-color);
+}
+
+.pro i {
+    margin-left: 5px;
+}
+
+.pro:hover i {
+    animation: bounce-vertical 0.5s linear alternate infinite;
+}
+
+.pro .img {
+    height: 225px;
+}
+
+.pro img {
+    width: 100%;
+    height: 100%;
+}
+
+.pro .content {
+    margin: 0 12px;
+    font-size: large;
+}
+
+.pro .link {
+    font-size: 33px;
+}
+
+@media (max-width: 400px) {
+    .pro .link {
+        font-size: 25px;
+    }
+
+    .pro .content:not(.link) {
+        font-size: medium;
+    }
+}
+/* Projects End */
+
 /* Animation Start */
 @keyframes bounce {
     0% {
@@ -495,6 +613,16 @@ p.level {
 
     100% {
         transform: translate(0, -4px);
+    }
+}
+
+@keyframes bounce-vertical {
+    0% {
+        transform: translate(2px, 0);
+    }
+
+    100% {
+        transform: translate(-2px, 0);
     }
 }
 /* Animation End */
