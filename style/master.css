@@ -607,7 +607,7 @@ p.level {
 
 /* Footer Start */
 footer {
-    padding: 15px;
+    padding: 25px;
     background-color: var(--landing-color);
     display: flex;
     flex-direction: column;
@@ -624,13 +624,13 @@ footer .start {
 }
 
 footer>p {
-    margin-top: 20px;
+    margin: 15px auto 0;
     font-size: 18px;
 }
 
 footer .start h3 {
     font-size: 35px;
-    margin-bottom: 15px;
+    margin: 0 auto 15px;
 }
 
 footer .start span {
