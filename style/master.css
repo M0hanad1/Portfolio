@@ -700,12 +700,6 @@ footer .start span {
     }
 }
 
-@keyframes rotate {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 @keyframes width-increase {
     100% {
         width: 50%;
