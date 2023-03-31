@@ -488,7 +488,7 @@ p.level {
 }
 
 .skill:hover i {
-    rotate: y 180deg;
+    rotate: y 0.5turn;
 }
 /* Skills End */
 
@@ -639,7 +639,8 @@ footer .start span {
     height: 15px;
     background-color: var(--landing-color);
     border-radius: 50%;
-    border: 2px solid whitesmoke;
+    border: 2px dotted whitesmoke;
+    animation: rotate 5s linear infinite;
 }
 
 .start::before {
@@ -697,6 +698,12 @@ footer .start span {
 
     100% {
         transform: translate(-2px, 0);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(1turn);
     }
 }
 
