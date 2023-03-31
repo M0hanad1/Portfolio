@@ -136,8 +136,8 @@ section[id] {
         transform var(--short-transition-time);
 }
 
-.card > .card-title,
-.card > p:first-of-type {
+.card>.card-title,
+.card>p:first-of-type {
     position: absolute;
     top: 50%;
     right: 50%;
@@ -155,7 +155,7 @@ section[id] {
     letter-spacing: 1px;
 }
 
-.card > p:first-of-type {
+.card>p:first-of-type {
     opacity: 0;
     padding: 0 15px;
     width: 100%;
@@ -181,7 +181,7 @@ section[id] {
     animation: bounce 0.8s linear alternate infinite;
 }
 
-.card:hover > p:first-of-type {
+.card:hover>p:first-of-type {
     opacity: 1;
     transform: translate(50%, 25%);
 }
@@ -535,7 +535,7 @@ p.level {
     border-radius: 8px;
     margin: 0;
     transition: background-color var(--short-transition-time),
-    color var(--short-transition-time);
+        color var(--short-transition-time);
 }
 
 .pro:hover .tags * {
@@ -552,7 +552,6 @@ p.level {
     background-color: var(--theme-color);
     transform: scale(1.1);
     box-shadow: 0 5px 8px 2px rgba(0, 0, 0, 0.1);
-    border: none;
 }
 
 .pro .important {
@@ -564,7 +563,8 @@ p.level {
     color: var(--third-color);
 }
 
-.pro .important:hover, .pro .important:hover * {
+.pro .important:hover,
+.pro .important:hover * {
     color: var(--fourth-color);
 }
 
@@ -605,6 +605,80 @@ p.level {
 }
 /* Projects End */
 
+/* Footer Start */
+footer {
+    padding: 15px;
+    background-color: var(--landing-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 18px;
+}
+
+footer .start {
+    width: 240px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+}
+
+footer>p {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+footer .start h3 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+footer .start span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: var(--landing-color);
+    border-radius: 50%;
+    border: 2px solid whitesmoke;
+}
+
+.start::before {
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: whitesmoke;
+    position: absolute;
+    top: calc(100% - 12.5px);
+    right: calc(50% + 7.5px);
+    animation: width-increase 1.5s linear infinite alternate;
+}
+
+.start::after {
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: whitesmoke;
+    position: absolute;
+    top: calc(100% - 12.5px);
+    left: calc(50% + 7.5px);
+    animation: width-increase 1.5s linear infinite alternate;
+}
+
+.social i {
+    transition: color var(--short-transition-time),
+        transform var(--short-transition-time);
+}
+
+.social a {
+    margin: 0 3px;
+}
+
+.social a:hover i {
+    color: var(--third-color);
+    transform: scale(1.1);
+}
+/* Footer End */
+
 /* Animation Start */
 @keyframes bounce {
     0% {
@@ -623,6 +697,18 @@ p.level {
 
     100% {
         transform: translate(-2px, 0);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes width-increase {
+    100% {
+        width: 50%;
     }
 }
 /* Animation End */
