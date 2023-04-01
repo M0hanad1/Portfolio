@@ -595,13 +595,14 @@ p.level {
 }
 
 @media (max-width: 400px) {
+    .pro .content {
+        font-size: medium;
+    }
+
     .pro .link {
         font-size: 25px;
     }
 
-    .pro .content:not(.link) {
-        font-size: medium;
-    }
 }
 /* Projects End */
 
