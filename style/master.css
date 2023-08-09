@@ -239,11 +239,11 @@ section[id] {
 }
 
 .top:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .top:hover i {
-    animation: bounce 0.4s linear alternate infinite;
+    animation: bounce-arrow 0.4s linear alternate infinite;
 }
 
 @media (max-width: 480px) {
@@ -719,6 +719,16 @@ footer .start span {
 
 /* Animation Start */
 @keyframes bounce {
+    0% {
+        transform: translate(0, 4px);
+    }
+
+    100% {
+        transform: translate(0, -4px);
+    }
+}
+
+@keyframes bounce-arrow {
     100% {
         transform: translate(0, -4px);
     }
