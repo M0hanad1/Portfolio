@@ -14,6 +14,7 @@
 
 ::-webkit-scrollbar {
     width: 5px;
+    background-color: #0c1414;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -49,7 +50,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: bold;
     overflow: overlay;
 }
@@ -136,8 +137,8 @@ section[id] {
         transform var(--short-transition-time);
 }
 
-.card>.card-title,
-.card>p:first-of-type {
+.card > .card-title,
+.card > p:first-of-type {
     position: absolute;
     top: 50%;
     right: 50%;
@@ -155,7 +156,7 @@ section[id] {
     letter-spacing: 1px;
 }
 
-.card>p:first-of-type {
+.card > p:first-of-type {
     opacity: 0;
     padding: 0 15px;
     width: 100%;
@@ -178,10 +179,10 @@ section[id] {
 }
 
 .card:hover i {
-    animation: bounce 0.8s linear alternate infinite;
+    animation: bounce 0.6s linear alternate infinite;
 }
 
-.card:hover>p:first-of-type {
+.card:hover > p:first-of-type {
     opacity: 1;
     transform: translate(50%, 25%);
 }
@@ -221,6 +222,37 @@ section[id] {
     }
 }
 /* Global Rules End */
+
+/* Top Arrow  Start */
+.top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0c1414;
+    padding: 10px;
+    text-align: center;
+    border-radius: 50%;
+    transition: transform var(--short-transition-time);
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.top:hover {
+    transform: scale(1.05);
+}
+
+.top:hover i {
+    animation: bounce 0.4s linear alternate infinite;
+}
+
+@media (max-width: 480px) {
+    .top {
+        right: 12px;
+        bottom: 12px;
+    }
+}
+/* Top Arrow  End*/
 
 /* Header Start */
 header {
@@ -270,9 +302,12 @@ nav.words a::after {
     right: 0;
     height: 2px;
     background-position: right;
-    background: linear-gradient(to left,
+    background: linear-gradient(
+            to left,
             transparent 50%,
-            var(--theme-color) 50%) right;
+            var(--theme-color) 50%
+        )
+        right;
     background-size: 200%;
     transition: background-position var(--short-transition-time),
         visibility var(--short-transition-time);
@@ -382,9 +417,12 @@ nav.burger-menu li:hover a {
     border: 1px solid var(--theme-color);
     padding: 18px;
     border-radius: 5px;
-    background: linear-gradient(to left,
+    background: linear-gradient(
+            to left,
             transparent 50%,
-            var(--theme-color) 50%) right;
+            var(--theme-color) 50%
+        )
+        right;
     background-size: 200%;
     transition: background-position var(--long-transition-time),
         color var(--long-transition-time);
@@ -395,8 +433,7 @@ nav.burger-menu li:hover a {
     color: whitesmoke;
 }
 
-@media (max-width: 400px),
-(max-height: 470px) {
+@media (max-width: 400px), (max-height: 470px) {
     .landing {
         font-size: 22px;
     }
@@ -602,7 +639,6 @@ p.level {
     .pro .link {
         font-size: 25px;
     }
-
 }
 /* Projects End */
 
@@ -624,7 +660,7 @@ footer .start {
     position: relative;
 }
 
-footer>p {
+footer > p {
     margin: 15px auto 0;
     font-size: 18px;
 }
@@ -683,10 +719,6 @@ footer .start span {
 
 /* Animation Start */
 @keyframes bounce {
-    0% {
-        transform: translate(0, 4px);
-    }
-
     100% {
         transform: translate(0, -4px);
     }
