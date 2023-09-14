@@ -223,17 +223,19 @@ section[id] {
 }
 /* Global Rules End */
 
-/* Top Arrow  Start */
+/* Top Arrow Start */
 .top {
-    display: none;
     position: fixed;
+    visibility: hidden;
+    opacity: 0;
     bottom: 20px;
     right: 20px;
     background-color: #0c1414;
     padding: 10px;
     text-align: center;
     border-radius: 50%;
-    transition: transform var(--short-transition-time);
+    transition: transform var(--short-transition-time),
+        opacity var(--short-transition-time);
     cursor: pointer;
     z-index: 9999;
 }
@@ -252,7 +254,7 @@ section[id] {
         bottom: 12px;
     }
 }
-/* Top Arrow  End*/
+/* Top Arrow End*/
 
 /* Header Start */
 header {

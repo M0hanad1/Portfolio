@@ -4,9 +4,15 @@ const topButton = document.querySelector(".top");
 
 document.body.onscroll = () => {
     if (this.scrollY >= 350) {
-        topButton.style.display = "block";
+        if (topButton.style.opacity == 0) {
+            topButton.style.visibility = "visible";
+            topButton.style.opacity = 1;
+        }
     } else {
-        topButton.style.display = "none";
+        if (topButton.style.opacity == 1) {
+            topButton.style.opacity = 0;
+            setTimeout(() => (topButton.style.visibility = "hidden"), 200);
+        }
     }
 };
 
