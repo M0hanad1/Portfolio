@@ -1,11 +1,12 @@
-import Container from "@components/Container";
+import ContextProvider from "context/ContextProvider";
+import Header from "components/ui/Header";
 
 export default function App() {
   return (
-    <div className="flex h-screen items-center justify-center bg-slate-900 text-cyan-500">
-      <Container>
-        <h1 className="self-center text-7xl font-bold">Mohanad</h1>
-      </Container>
-    </div>
+    <ContextProvider>
+      <div className="h-[20000px]">
+        <Header />
+      </div>
+    </ContextProvider>
   );
 }

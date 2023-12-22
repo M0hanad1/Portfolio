@@ -6,10 +6,6 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "baseUrl": "./src",
-    "paths": {
-      "@components/*": ["components/*"],
-      "@ui/*": ["components/ui/*"]
-    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
