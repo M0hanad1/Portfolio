@@ -1,6 +1,8 @@
+export type ThemeNames = "system" | "dark" | "light";
+
 export interface Theme {
-  currentTheme: "system" | "dark" | "light";
+  currentTheme: ThemeNames;
   isDark: boolean;
 }
 
-export type sections = "home" | "skills" | "projects" | "contact";
+export type Sections = "home" | "skills" | "projects" | "contact";

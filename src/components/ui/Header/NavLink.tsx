@@ -1,10 +1,10 @@
 import { sectionContext } from "context/sectionContext";
 import { useContext } from "react";
-import { sections } from "types";
+import { Sections } from "types";
 
 interface NavLinkProps {
   link: string;
-  name: sections;
+  name: Sections;
 }
 
 export default function NavLink({ link, name }: NavLinkProps) {

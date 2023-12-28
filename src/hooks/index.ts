@@ -1,2 +1,2 @@
 export { default as useTheme } from "./useTheme";
-export { default as useClick } from "./useClick";
+export { default as useClickShow } from "./useClickShow";

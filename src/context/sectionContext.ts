@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction, createContext } from "react";
-import { sections } from "types";
+import { Sections } from "types";
 
 interface SectionContext {
-  section: sections;
-  setSection: Dispatch<SetStateAction<sections>>;
+  section: Sections;
+  setSection: Dispatch<SetStateAction<Sections>>;
 }
 
 export const sectionContext = createContext<SectionContext>(
