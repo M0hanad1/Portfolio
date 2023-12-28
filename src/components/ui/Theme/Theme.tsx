@@ -3,14 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { themeContext } from "context/themeContext";
 import { useClickShow } from "hooks";
 import { useContext, useRef } from "react";
-import { ThemeNames } from "types";
 import ThemeItem from "./ThemItem";
 
-const themeIcons = {
-  system: faTv,
-  light: faSun,
-  dark: faMoon,
-};
+const themeIcons = [
+  { themeName: "system", icon: faTv },
+  { themeName: "dark", icon: faMoon },
+  { themeName: "light", icon: faSun },
+] as const;
 
 export default function Theme() {
   const { theme } = useContext(themeContext);
@@ -26,7 +25,7 @@ export default function Theme() {
         ref={buttonRef}
       >
         <FontAwesomeIcon
-          icon={themeIcons[theme.isDark ? "dark" : "light"]}
+          icon={themeIcons[theme.isDark ? 1 : 2].icon}
           size="xl"
         />
       </button>
@@ -35,12 +34,12 @@ export default function Theme() {
           active ? "visible mb-1.5 opacity-100" : "invisible mb-0.5 opacity-0"
         }`}
       >
-        {Object.entries(themeIcons).map((value) => (
+        {themeIcons.map((value) => (
           <ThemeItem
-            key={value[0]}
-            currentTheme={value[0] as ThemeNames}
-            isDark={value[0] === "dark"}
-            icon={value[1]}
+            key={value.themeName}
+            currentTheme={value.themeName}
+            isDark={value.themeName === "dark"}
+            icon={value.icon}
           />
         ))}
       </ul>
