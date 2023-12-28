@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction, createContext } from "react";
-
-export type sections = "home" | "skills" | "projects" | "contact";
+import { sections } from "types";
 
 interface SectionContext {
   section: sections;
