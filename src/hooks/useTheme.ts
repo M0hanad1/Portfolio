@@ -6,20 +6,20 @@ export default function useTheme() {
 
   function getTheme(): Theme {
     if (!localStorage.theme) {
-      return updateDoc({ currentTheme: "system", isDark: true });
+      return updateDoc({ themeName: "system", isDark: false });
     }
     return updateDoc(JSON.parse(localStorage.theme));
   }
 
-  function updateDoc({ currentTheme, isDark }: Theme): Theme {
-    if (currentTheme === "system") {
+  function updateDoc({ themeName, isDark }: Theme): Theme {
+    if (themeName === "system") {
       isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     }
     if (isDark) {
       document.documentElement.classList.add("dark");
     } else document.documentElement.classList.remove("dark");
-    localStorage.theme = JSON.stringify({ currentTheme, isDark });
-    return { currentTheme, isDark };
+    localStorage.theme = JSON.stringify({ themeName, isDark });
+    return { themeName, isDark };
   }
 
   function updateTheme(theme: Theme) {
