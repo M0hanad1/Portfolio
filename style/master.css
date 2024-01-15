@@ -93,7 +93,8 @@ section[id] {
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
-    transition: transform var(--long-transition-time),
+    transition:
+        transform var(--long-transition-time),
         opacity var(--short-transition-time);
 }
 
@@ -133,7 +134,8 @@ section[id] {
 
 .card {
     position: relative;
-    transition: background-color var(--long-transition-time),
+    transition:
+        background-color var(--long-transition-time),
         transform var(--short-transition-time);
 }
 
@@ -160,7 +162,8 @@ section[id] {
     opacity: 0;
     padding: 0 15px;
     width: 100%;
-    transition: transform var(--long-transition-time),
+    transition:
+        transform var(--long-transition-time),
         opacity var(--short-transition-time);
 }
 
@@ -234,7 +237,8 @@ section[id] {
     padding: 10px;
     text-align: center;
     border-radius: 50%;
-    transition: transform var(--short-transition-time),
+    transition:
+        transform var(--short-transition-time),
         opacity var(--short-transition-time);
     cursor: pointer;
     z-index: 9999;
@@ -276,7 +280,8 @@ header .container {
 }
 
 header a {
-    transition: color var(--short-transition-time),
+    transition:
+        color var(--short-transition-time),
         transform var(--short-transition-time);
     display: inline-block;
     position: relative;
@@ -311,7 +316,8 @@ nav.words a::after {
         )
         right;
     background-size: 200%;
-    transition: background-position var(--short-transition-time),
+    transition:
+        background-position var(--short-transition-time),
         visibility var(--short-transition-time);
 }
 
@@ -414,6 +420,12 @@ nav.burger-menu li:hover a {
     margin: 0;
 }
 
+.landing .links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
 .landing-button {
     color: var(--theme-color);
     border: 1px solid var(--theme-color);
@@ -426,8 +438,15 @@ nav.burger-menu li:hover a {
         )
         right;
     background-size: 200%;
-    transition: background-position var(--long-transition-time),
+    transition:
+        background-position var(--long-transition-time),
         color var(--long-transition-time);
+}
+
+.landing-button:nth-child(2) {
+    color: #009688;
+    border-color: #009688;
+    background-image: linear-gradient(to left, transparent 50%, #009688 50%);
 }
 
 .landing-button:hover {
@@ -556,7 +575,8 @@ p.level {
     padding-bottom: 20px;
     border-radius: 8px;
     overflow: hidden;
-    transition: background-color var(--long-transition-time),
+    transition:
+        background-color var(--long-transition-time),
         transform var(--short-transition-time);
 }
 
@@ -573,7 +593,8 @@ p.level {
     font-size: small;
     border-radius: 8px;
     margin: 0;
-    transition: background-color var(--short-transition-time),
+    transition:
+        background-color var(--short-transition-time),
         color var(--short-transition-time);
 }
 
@@ -704,13 +725,17 @@ footer .start span {
     animation: width-increase 1.5s linear infinite alternate;
 }
 
-.social i {
-    transition: color var(--short-transition-time),
-        transform var(--short-transition-time);
+.social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
 }
 
-.social a {
-    margin: 0 3px;
+.social i {
+    transition:
+        color var(--short-transition-time),
+        transform var(--short-transition-time);
 }
 
 .social a:hover i {
